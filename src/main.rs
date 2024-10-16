@@ -6,7 +6,7 @@ fn main() {
     let args: Vec<String> = env::args().collect();
 
     let config = Config::new(&args).unwrap_or_else(|err: &str| {
-        println!("There was a problem reading the file: {}", err);
+        eprintln!("There was a problem reading the file: {}", err);
         process::exit(1);
     });
     println!("{:?}", args);
